@@ -1,0 +1,35 @@
+---
+Metadata:
+  TemplateId: "arn:aws:cloudformation:eu-west-1:449325664824:generatedTemplate/d5142551-1820-433e-859a-ad5c22a985a1"
+Resources:
+  IAMGroup00infosec00YV1hN:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Group"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupName: "gamma1"
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/IAMFullAccess"
+  IAMUser00grafana00mlUz6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::User"
+    DeletionPolicy: "Delete"
+    Properties:
+      Path: "/"
+      UserName: "alpha"
+    #  LoginProfile:
+    #    PasswordResetRequired: false
+      Groups:
+      - Ref: "IAMGroup00infosec00YV1hN"
+  IAMUser00prometheus00MwVcj:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::User"
+    DeletionPolicy: "Delete"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
+      UserName: "beta"
+      Groups:
+      - Ref: "IAMGroup00infosec00YV1hN"
