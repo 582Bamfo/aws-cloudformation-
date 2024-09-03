@@ -7,7 +7,7 @@ Resources:
     Type: "AWS::IAM::Group"
     DeletionPolicy: "Delete"
     Properties:
-      GroupName: "gamma1"
+      GroupName: "omega"
       Path: "/"
       ManagedPolicyArns:
       - "arn:aws:iam::aws:policy/IAMFullAccess"
