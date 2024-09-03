@@ -30,6 +30,6 @@ Resources:
       Path: "/"
       ManagedPolicyArns:
       - "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
-      UserName: "beta"
+      UserName: "zulu"
       Groups:
       - Ref: "IAMGroup00infosec00YV1hN"
